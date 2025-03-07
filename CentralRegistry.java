@@ -1,15 +1,15 @@
 public class CentralRegistry extends Object{
-    private static Registry instance;
+    private static CentralRegistry instance;
     private String path;
     private String connectionString;
 
-    private Registry(){
+    private CentralRegistry(){
 
     }
 
-    public static Registry getInstance(){
+    public static CentralRegistry getInstance(){
         if (instance == null) {
-            instance = new Registry();
+            instance = new CentralRegistry();
         }
         return instance;
     }
