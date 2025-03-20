@@ -1,14 +1,19 @@
 package com.es2.passwordgenerator;
 
 public abstract class PasswordGeneratorFactory {
-    PasswordGenerator getPasswordGenerator(String type){
-        PasswordGenerator passGen = null;
-        if (type.equalsIgnoreCase("Computer")) {
-            //passGen = new Computer();
-        } else if (type.equalsIgnoreCase("Software")) {
-            //passGen = new Software();
+
+    PasswordGeneratorFactory(){
+
+    }
+
+    public static PasswordGenerator getPasswordGenerator(String type) throws UndefinedPasswordTypeException{
+        PasswordGenerator passGen;
+        if (type.equalsIgnoreCase("complex")) {
+            passGen = new ComplexPasswordGenerator();
+        } else if (type.equalsIgnoreCase("simple")) {
+            passGen = new SimplePasswordGenerator();
         } else {
-            //throw new UndefinedProductException();
+            throw new UndefinedPasswordTypeException();
         }
         return passGen;
     }

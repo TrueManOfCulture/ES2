@@ -2,9 +2,18 @@ public class CentralRegistry extends Object{
     private static CentralRegistry instance;
     private String path;
     private String connectionString;
+    private String appName;
 
     private CentralRegistry(){
+        appName = "Password Manager App";
+    }
 
+    public String getAppName() {
+        return appName;
+    }
+
+    public void setAppName(String appName) {
+        this.appName = appName;
     }
 
     public static CentralRegistry getInstance(){
