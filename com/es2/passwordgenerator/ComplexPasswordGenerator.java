@@ -15,7 +15,7 @@ public class ComplexPasswordGenerator implements PasswordGenerator{
         String password = ""; // Start with an empty string
         Random random = new Random();
 
-        // Generate 8 random characters
+        // Generate 12 random characters
             for (int i = 0; i < 12; i++) {
             int index = random.nextInt(characters.length());
             password += characters.charAt(index); // Concatenate each character
